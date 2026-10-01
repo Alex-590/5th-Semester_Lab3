@@ -73,12 +73,34 @@ def permuteP[T](s: list[T]) -> list[list[T]]:
 
 def permutations_with_repetition[T](s: list[T], k: int) -> list[list[T]]:
     if not s:
-        return [[]]
+        return []
     empty: list[list[T]] = []
     return sum([permuteP(e) for e in combinationsP(s, k)], empty)
     
     
     
+
+#------------------------------------------------------------------------------------------------
+
+def combinations_with_repetition[T](s: list[T],k: int) -> list[list[T]]:
+    ...
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
