@@ -82,6 +82,12 @@ def permutations_with_repetition[T](s: list[T], k: int) -> list[list[T]]:
 
 #------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
 def combinations_with_repetition[T](s: list[T],k: int) -> list[list[T]]:
     ...
 
