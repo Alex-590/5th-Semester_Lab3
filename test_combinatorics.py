@@ -1,9 +1,7 @@
 # File: combinatorics_test.py
 
 from unittest import TestCase, main
-from combinatorics import  permutations_with_repetition
-    #combinations_with_repetition
-
+from combinatorics import  permutations_with_repetition, combinations_with_repetition
 
 class TestCombinatorics(TestCase):
 
@@ -108,7 +106,7 @@ class TestCombinatorics(TestCase):
             sorted(
                 permutations_with_repetition(['w', 'x', 'y', 'z'],
                                              3)))
-""" 
+
     def test_permutations_with_repetition_9(self):
         self.assertEqual(729,
                          len(permutations_with_repetition(
@@ -196,7 +194,6 @@ class TestCombinatorics(TestCase):
         self.assertEqual(715,
                          len(combinations_with_repetition(
                              list(range(10)), 4)))
- """
 
 if __name__ == '__main__':
     main()

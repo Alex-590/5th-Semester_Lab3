@@ -1,5 +1,14 @@
 from pprint import pprint
 
+#----------------------------------------------------------
+# Lab #3: Combinatorics
+# Permutations and combinations with repetitions.
+#
+# Date: 02-Oct-2026
+# Authors:
+#           A01802689 Pablo Alejandro Ortiz Montes
+#           A01803181 Alexander Mejia Tovar
+#----------------------------------------------------------
 
 # def nicely_sorted[T](s: list[list[T]]) -> list[list[T]]:
 
@@ -53,7 +62,7 @@ def insert_everywhereP[T](x: T, s: list[T]) -> list[list[T]]:
     return result
 
 
-def combinationsP[T](s: list[T], k: int) -> list[list[T]]: # filtra las psobles combianciones con la cantidad K
+def combinations_with_repetition[T](s: list[T], k: int) -> list[list[T]]: # filtra las psobles combianciones con la cantidad K
     if k == 0:
         return [[]]
     
@@ -61,7 +70,7 @@ def combinationsP[T](s: list[T], k: int) -> list[list[T]]: # filtra las psobles 
 
     for i in range(len(s)): #para i que ira hasta el tamnao de la lista de s
      valorInicial:T = s[i]; #apenas toma el primer valor
-     for x in combinationsP(s[i:], k-1):
+     for x in combinations_with_repetition(s[i:], k-1):
          temp.append([valorInicial] + x)
     return temp
 
@@ -75,63 +84,10 @@ def permutations_with_repetition[T](s: list[T], k: int) -> list[list[T]]:
     if not s:
         return []
     empty: list[list[T]] = []
-    return sum([permuteP(e) for e in combinationsP(s, k)], empty)
-    
-    
-    
-
-#------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-def combinations_with_repetition[T](s: list[T],k: int) -> list[list[T]]:
-    ...
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return sum([permuteP(e) for e in combinations_with_repetition(s, k)], empty)
 
 if __name__ == '__main__':
-    # pprint(power_set([]))  # type: ignore
-    # pprint(power_set([1]))
-    # pprint(power_set(['a', 'b']))
-    # pprint(power_set(['a', 'b', 'c']))
-    # pprint(nicely_sorted(power_set(['a', 'b', 'c', 'd'])))
-    # pprint(sorted(combinations([1, 2, 3, 4], 2)))
-    # pprint(sorted(combinations([1, 2, 3, 4], 1)))
-    # pprint(sorted(combinations([1, 2, 3, 4], 3)))
-    # pprint(sorted(combinations([1, 2, 3, 4], 4)))
-    # pprint(insert(7, [1, 2, 3], 0))
-    # pprint(insert(7, [1, 2, 3], 1))
-    # pprint(insert(7, [1, 2, 3], 2))
-    # pprint(insert(7, [1, 2, 3], 3))
-    #pprint(insert_everywhere(7, [1, 2, 3, 4, 5, 6]))
-    # pprint(sorted(permute([1, 2, 3])))
-    # pprint(sorted(permute([1, 2, 3, 4])))
-    # pprint(sorted(permutations([1, 2, 3], 1)))
-    # pprint(sorted(permutations([1, 2, 3], 2)))
-    # pprint(sorted(permutations([1, 2, 3], 2)))
-    # pprint(insert_everywhereP(7, [1, 2, 3], 2))
-    #  pprint(sorted(combinationsP([1,2,3], 2)))
      pprint(sorted(permutations_with_repetition([0,1], 4)))
+     pprint(sorted(permutations_with_repetition(['a','b','c'], 2)))
+     pprint(sorted(combinations_with_repetition([0,1], 4)))
+     pprint(sorted(combinations_with_repetition(['a','b','c'], 2)))
